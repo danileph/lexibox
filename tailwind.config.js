@@ -24,6 +24,8 @@ module.exports = {
       },
       boxShadow: {
         csm: "0px 3px 0px 0px rgb(0, 0, 0)",
+        "csm-sm": "0px 2px 0px 0px rgb(0, 0, 0)",
+        "csm-lg": "0px 3.5px 0px 0px rgb(0, 0, 0)",
       },
       borderWidth: {
         3: "3px",
