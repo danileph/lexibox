@@ -1,7 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
+import { BaseLayout } from "@/widgets/layouts";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ weight: "500", subsets: ["latin"] });
 
 export const metadata = {
   title: "Lexibox",
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className}>
+        <BaseLayout>{children}</BaseLayout>
+      </body>
     </html>
   );
 }
