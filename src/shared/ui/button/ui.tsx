@@ -8,7 +8,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const styles = /* @tw */ {
-  base: "border-darkest border-2 rounded-[8px] px-4 py-2 shadow-csm uppercase select-none text-sm font-semibold tracking-widest hover:backdrop-brightness-95 translate-y-[-3px] active:translate-y-[0px] active:shadow-none ",
+  base: "border-darkest border-2 rounded-[8px] px-4 py-2 shadow-csm uppercase select-none text-sm font-semibold tracking-widest hover:backdrop-brightness-95 translate-y-[-3px] active:translate-y-[0px] active:shadow-none focus:backdrop-brightness-95 focus:outline-none ",
   variants: {
     primary: "bg-primary hover:brightness-110",
     secondary: "",
