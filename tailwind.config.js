@@ -21,11 +21,13 @@ module.exports = {
         secondary: "#FFA63C",
         darkest: "#000000",
         hover: "#C4CFCF",
+        gray: "#afafaf",
       },
       boxShadow: {
         csm: "0px 3px 0px 0px rgb(0, 0, 0)",
         "csm-sm": "0px 2px 0px 0px rgb(0, 0, 0)",
         "csm-lg": "0px 3.5px 0px 0px rgb(0, 0, 0)",
+        input: "0px 0px 5px 0px rgba(0, 0, 0, 0.25) inset",
       },
       borderWidth: {
         3: "3px",
