@@ -15,10 +15,10 @@ const styles = {
   },
   sizes: {
     small:
-      "py-1.5 px-3 text-xs rounded-[7px] shadow-csm-sm border-[1.9px] active:translate-y-[2px]",
+      "py-1.5 px-3 text-xs rounded-[7px] shadow-csm-sm border-[2px] active:translate-y-[2px]",
     medium: "",
     large:
-      "py-3 px-6 rounded-[9px] text-md shadow-csm-lg active:translate-y-[4px] border-[2.5px] font-bold",
+      "py-2.5 px-6 rounded-[9px] text-md shadow-csm-lg active:translate-y-[4px] border-[2.5px]",
   },
 };
 

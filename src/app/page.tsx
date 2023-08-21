@@ -2,5 +2,9 @@ import Image from "next/image";
 import { Button } from "@/shared/ui/button";
 
 export default function Home() {
-  return <>d</>;
+  return (
+    <>
+      <Button size={"large"}>Hello</Button>
+    </>
+  );
 }
