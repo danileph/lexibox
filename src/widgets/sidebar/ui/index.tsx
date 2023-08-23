@@ -11,8 +11,8 @@ export const Sidebar: FC<ISidebarProps> = ({ className, ...other }) => {
   return (
     <aside
       className={twMerge(
-        "bg-light w-[300px] h-screen border-r-[2.5px] border-r-black flex flex-col p-8",
-        className
+        "bg-light w-[300px] fixed h-screen border-r-[2.5px] border-r-black flex flex-col p-8",
+        className,
       )}
       {...other}
     >
