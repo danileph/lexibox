@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import { Typography } from "@/shared/ui/typography";
+import { Divider } from "@/shared/ui/divider";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
             which might cause designers and developers difficulties and
             duplication and reduce the efficiency of development.
           </Typography.Paragraph>
+          <Divider />
           <Typography.Paragraph>
             After massive project practice and summaries, Ant Design, a design
             language for background applications, is refined by Ant UED Team,

@@ -15,9 +15,9 @@ export const Menu: FC<IMenuProps> = () => {
           <li
             key={item.name}
             className={twMerge(
-              "py-2.5 px-8 text-lg font-medium mb-4 last:mb-0 hover:bg-hover rounded-xl cursor-pointer select-none flex space-x-4",
+              "py-2.5 px-8 text-lg font-semibold mb-4 last:mb-0 hover:bg-hover rounded-xl cursor-pointer select-none flex space-x-4",
               current === item.url &&
-                "bg-primary border-darkest border-[2.5px] hover:bg-primary"
+                "bg-primary border-darkest border-[2px] hover:bg-primary",
             )}
           >
             {item.icon && (
