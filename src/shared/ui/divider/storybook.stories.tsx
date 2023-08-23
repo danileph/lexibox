@@ -20,3 +20,17 @@ export const WithText: Story = {
 export const WithoutText: Story = {
   args: {},
 };
+
+export const Primary: Story = {
+  args: {
+    children: "Text",
+    variant: "primary",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    children: "Text",
+    variant: "secondary",
+  },
+};
