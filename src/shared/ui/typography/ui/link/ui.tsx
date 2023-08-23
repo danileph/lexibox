@@ -9,7 +9,8 @@ interface ILinkProps extends React.ComponentProps<typeof LinkNext> {
 
 const styles = /* @tw */ {
   root: {
-    base: "hover:text-secondary hover:border-b-secondary inline-block border-b leading-none",
+    base: "hover:text-secondary hover:border-b-secondary inline-block leading-none",
+    underline: "border-b",
     variant: {
       primary: "border-b-darkest",
       secondary: "border-b-gray text-gray",
@@ -27,6 +28,7 @@ export const Link: FC<ILinkProps> = ({
     <LinkNext
       className={twMerge(
         styles.root.base,
+        underline && styles.root.underline,
         styles.root.variant[variant],
         className,
       )}
