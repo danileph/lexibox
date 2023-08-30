@@ -11,23 +11,49 @@ interface IInputProps
   withLabel?: boolean;
   placeholder?: string;
   wrapProps?: React.HTMLAttributes<HTMLElement>;
+  fullWidth?: boolean;
 }
 
 const styles = /* @tw */ {
-  wrap: "relative inline-block",
-  base: "peer relative z-20 border-darkest border-2 rounded-[8px] px-4 py-2 font-semibold hover:backdrop-brightness-95 bg-transparent focus:outline-none focus:backdrop-brightness-95 shadow-input placeholder-gray",
-  variants: {
-    primary: "",
-    secondary: "",
+  input: {
+    base: "peer relative z-20 border-darkest border-2 hover:backdrop-brightness-95 bg-transparent focus:outline-none focus:backdrop-brightness-95 shadow-input placeholder-gray",
+    variants: {
+      primary: "",
+      secondary: "",
+    },
+    sizes: {
+      small:
+        "p-input-sm rounded-input-sm h-input-sm text-input-sm placeholder:text-input-sm",
+      medium:
+        "p-input-md rounded-input-md h-input-md text-input-md placeholder:text-input-md",
+      large:
+        "p-input-lg rounded-input-lg h-input-lg text-input-lg placeholder:text-input-lg",
+    },
+    fullWidth: "w-full",
+    withLabel: {
+      small: "",
+      medium: "",
+      large: "pt-[22px] pb-[8px]",
+    },
   },
-  sizes: {
-    small: "py-1.5 px-3 rounded-[7px]",
-    medium: "",
-    large: "py-2.5 rounded-[9px] h-[48px]",
+  wrap: {
+    base: "relative inline-block",
+    fullWidth: "w-full",
   },
-  label: `absolute z-10 top-0 left-0 h-full flex flex-col justify-center ml-[calc(1rem+2px)] text-gray w-[calc(100%-1rem-2px)] cursor-text peer-focus:text-xs peer-active:text-xs peer-focus:translate-y-[-8px] peer-active:translate-y-[-8px] select-none`,
-  labelActive: "text-xs translate-y-[-8px]",
-  inputWithLabel: "pt-[20px] pb-[4px] h-[48px]",
+  label: {
+    base: `absolute z-10 top-0 left-0 h-full flex flex-col justify-center text-gray w-full cursor-text select-none border-2 border-transparent`,
+    size: {
+      small: "p-input-sm rounded-input-sm h-input-sm text-input-sm ",
+      medium: "p-input-md rounded-input-md h-input-md text-input-md",
+      large:
+        "p-input-lg rounded-input-lg h-input-lg text-input-lg peer-focus:translate-y-[-8px] peer-active:translate-y-[-8px] peer-focus:text-xs peer-active:text-xs",
+    },
+    active: {
+      small: "hidden",
+      medium: "hidden",
+      large: "text-xs translate-y-[-8px]",
+    },
+  },
 };
 
 export const Input: FC<IInputProps> = ({
@@ -37,6 +63,7 @@ export const Input: FC<IInputProps> = ({
   placeholder,
   size = "medium",
   onChange = () => {},
+  fullWidth = false,
   ...other
 }) => {
   const { className: wrapClassName, ...otherWrapProps } = wrapProps || {};
@@ -49,15 +76,23 @@ export const Input: FC<IInputProps> = ({
   };
 
   return (
-    <div className={twMerge(styles.wrap, wrapClassName)} {...otherWrapProps}>
+    <div
+      className={twMerge(
+        styles.wrap.base,
+        fullWidth && styles.wrap.fullWidth,
+        wrapClassName,
+      )}
+      {...otherWrapProps}
+    >
       <input
         id={id}
         type="text"
         placeholder={!withLabel ? placeholder : undefined}
         className={twMerge(
-          styles.base,
-          !withLabel && styles.sizes[size],
-          withLabel && placeholder && styles.inputWithLabel,
+          styles.input.base,
+          styles.input.sizes[size],
+          withLabel && placeholder && styles.input.withLabel[size],
+          fullWidth && styles.input.fullWidth,
         )}
         onChange={handleOnChange}
         value={value}
@@ -66,7 +101,11 @@ export const Input: FC<IInputProps> = ({
       {withLabel && placeholder && (
         <label
           htmlFor={id}
-          className={twMerge(styles.label, value !== "" && styles.labelActive)}
+          className={`
+            ${styles.label.base}
+            ${styles.label.size[size]}
+            ${value !== "" && styles.label.active[size]}
+          `}
         >
           {placeholder}
         </label>
