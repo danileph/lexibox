@@ -1,1 +1,1 @@
-export { SocialMedia } from "./ux";
+export { SocialMedia } from "./ui";
