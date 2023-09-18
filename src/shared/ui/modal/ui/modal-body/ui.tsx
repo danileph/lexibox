@@ -2,6 +2,7 @@
 import React, { FC, ReactElement, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { useScrollVisibility } from "@/shared/hooks/use-scroll";
+import { CrossIcon } from "@/shared/ui/icons";
 
 interface IModalBodyProps extends React.HTMLAttributes<HTMLElement> {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,7 +18,7 @@ const styles = /* @tw */ {
     isScrollShown: "pr-[calc(32px-3px)]",
   },
   buttonClose: {
-    base: "bg-cross-icon bg-cover bg-no-repeat bg-center absolute w-3 h-3 top-[26px] right-[26px]",
+    base: "absolute w-3 h-3 top-[26px] right-[26px]",
   },
   content: {
     base: "overflow-y-auto max-h-[calc(100vh-300px)] pr-8 pt-1 pb-1 overflow-x-hidden",
@@ -54,7 +55,9 @@ export const ModalBody: FC<IModalBodyProps> = ({
             isScrollShown && styles.header.isScrollShown
           }`}
         >
-          <button className={styles.buttonClose.base} onClick={handleClose} />
+          <button className={styles.buttonClose.base} onClick={handleClose}>
+            <CrossIcon className={"w-3 h-3"} />
+          </button>
           {header}
         </div>
         <div

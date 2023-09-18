@@ -1,5 +1,5 @@
 export interface MenuItem {
   name: string;
   url: string;
-  icon?: string;
+  renderIcon?: React.FC;
 }

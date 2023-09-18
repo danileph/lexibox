@@ -33,7 +33,7 @@ const styles = /* @tw */ {
     withLabel: {
       small: "",
       medium: "",
-      large: "pt-[22px] pb-[8px]",
+      large: "pt-[24px] pb-[7px]",
     },
   },
   wrap: {
@@ -46,12 +46,12 @@ const styles = /* @tw */ {
       small: "p-input-sm rounded-input-sm h-input-sm text-input-sm ",
       medium: "p-input-md rounded-input-md h-input-md text-input-md",
       large:
-        "p-input-lg rounded-input-lg h-input-lg text-input-lg peer-focus:translate-y-[-8px] peer-active:translate-y-[-8px] peer-focus:text-xs peer-active:text-xs",
+        "p-input-lg rounded-input-lg h-input-lg text-input-lg peer-focus:translate-y-[-9px] peer-active:translate-y-[-9px] peer-focus:text-xs peer-active:text-xs",
     },
     active: {
       small: "hidden",
       medium: "hidden",
-      large: "text-xs translate-y-[-8px]",
+      large: "text-xs translate-y-[-9px]",
     },
   },
 };

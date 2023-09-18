@@ -4,7 +4,22 @@
 
 
 body {
-  background: #F1F5F5;
+  background: #F9FBFB;
   min-height: 100vh;
   font-weight: 400;
 }
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  @apply bg-darkest rounded-[3px]
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0003] rounded-[3px]
+}
+

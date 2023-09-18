@@ -5,37 +5,43 @@ import { twMerge } from "tailwind-merge";
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
   size?: "small" | "medium" | "large";
+  fullWidth?: boolean;
 }
 
 const styles = /* @tw */ {
-  base: "border-darkest border-2 rounded-[8px] px-4 py-2 shadow-csm uppercase select-none text-sm font-semibold tracking-widest hover:backdrop-brightness-95 translate-y-[-3px] active:translate-y-[0px] active:shadow-none focus-visible:backdrop-brightness-95 focus:outline-none ",
+  base: "border-darkest border-2 shadow-csm uppercase select-none font-medium tracking-widest translate-y-[-3px] active:translate-y-[0px] active:shadow-none focus:outline-none ",
   variants: {
-    primary: "bg-primary hover:brightness-110",
-    secondary: "",
+    primary: "bg-primary hover:brightness-110 focus-visible:brightness-110",
+    secondary:
+      "hover:backdrop-brightness-95 focus-visible:backdrop-brightness-95",
   },
   sizes: {
     small:
-      "py-1.5 px-3 text-xs rounded-[7px] shadow-csm-sm active:translate-y-[2px]",
-    medium: "",
+      "p-input-sm rounded-input-sm h-input-sm text-button-sm placeholder:text-input-sm",
+    medium:
+      "p-input-md rounded-input-md h-input-md text-button-md placeholder:text-input-md",
     large:
-      "py-2.5 px-6 rounded-[9px] text-md shadow-csm-lg translate-y-[-4px]  active:translate-y-[0px]",
+      "p-input-lg rounded-input-lg h-input-lg text-button-lg placeholder:text-input-lg",
   },
+  fullWidth: "w-full",
 };
 
 export const Button: FC<IButtonProps> = ({
   variant = "secondary",
   size = "medium",
   className,
+  fullWidth = false,
   ...other
 }) => {
   return (
     <button
-      className={twMerge(
-        styles.base,
-        styles.variants[variant],
-        styles.sizes[size],
-        className,
-      )}
+      className={`
+         ${styles.base}
+         ${styles.sizes[size]}
+         ${styles.variants[variant]}
+         ${fullWidth && styles.fullWidth}
+         ${className}
+      `}
       {...other}
     ></button>
   );

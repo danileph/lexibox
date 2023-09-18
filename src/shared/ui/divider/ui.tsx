@@ -19,7 +19,7 @@ const styles = /* @tw */ {
     },
   },
   text: {
-    base: "uppercase font-semibold",
+    base: "uppercase font-medium text-sm",
     variants: {
       primary: "text-darkest",
       secondary: "text-gray",

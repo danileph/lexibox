@@ -7,11 +7,11 @@ interface ITitleProps extends React.HTMLAttributes<HTMLElement> {
 
 const styles = /* @tw */ {
   root: {
-    base: "font-semibold my-6",
+    base: "font-medium my-6",
     level: {
-      1: "text-3xl",
-      2: "text-2xl",
-      3: "text-lg",
+      1: "text-4xl",
+      2: "text-3xl",
+      3: "text-2xl",
     },
   },
 };
