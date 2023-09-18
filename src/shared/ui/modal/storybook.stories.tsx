@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Modal } from "./ui";
+import { Button } from "@/shared/ui/button";
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
@@ -14,7 +15,9 @@ type Story = StoryObj<typeof Modal>;
 export const Primary: Story = {
   args: {
     children: (setIsOpen) => <div>Hello world</div>,
-    label: "Open Modal",
+    trigger: (setIsOpen) => (
+      <Button onClick={() => setIsOpen(true)}>Open model</Button>
+    ),
     // size: "medium",
   },
 };

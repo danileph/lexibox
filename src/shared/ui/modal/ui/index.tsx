@@ -5,7 +5,6 @@ import { Button } from "@/shared/ui/button";
 
 interface IModalProps
   extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
-  label: string;
   children: (
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
   ) => ReactElement;
@@ -16,7 +15,6 @@ interface IModalProps
 }
 
 export const Modal: FC<IModalProps> = ({
-  label,
   children,
   header,
   trigger,
