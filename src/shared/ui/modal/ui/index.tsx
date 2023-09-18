@@ -6,29 +6,27 @@ import { Button } from "@/shared/ui/button";
 interface IModalProps
   extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
   label: string;
-  children: (setIsOpen: (...args: any) => any) => ReactElement;
+  children: (
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  ) => ReactElement;
+  trigger: (
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  ) => ReactElement;
   header?: ReactElement[] | ReactElement;
 }
 
 export const Modal: FC<IModalProps> = ({
   label,
-  onClick = () => {},
   children,
   header,
+  trigger,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    onClick(e);
-    setIsOpen(true);
-  };
-
   return (
     <>
-      <Button size={"large"} onClick={handleClick} {...props}>
-        Open Dialog
-      </Button>
+      {trigger(setIsOpen)}
       {isOpen && (
         <ModalBody setIsOpen={setIsOpen} header={header}>
           {React.cloneElement(children(setIsOpen))}

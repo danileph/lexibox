@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { Modal } from "@/shared/ui/modal";
 import { Typography } from "@/shared/ui/typography";
 import { Input } from "@/shared/ui/input";
@@ -14,6 +14,11 @@ export const AuthModal: FC<IAuthModalProps> = () => {
 
   return (
     <Modal
+      trigger={(setIsOpen) => (
+        <Button size={"large"} onClick={() => setIsOpen(true)}>
+          Open Dialog
+        </Button>
+      )}
       label={"Open a modal"}
       header={
         <>
