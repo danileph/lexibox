@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 import { Menu } from "./menu";
-import { Logo } from "./logo";
+// import { Logo } from "./logo";
 import { SocialMedia } from "./social-media";
 import { AdditionMenu } from "@/widgets/sidebar/ui/addition-menu";
+import { Logo } from "@/shared/ui/logo";
 
 interface ISidebarProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -16,7 +17,7 @@ export const Sidebar: FC<ISidebarProps> = ({ className, ...other }) => {
       `}
       {...other}
     >
-      <Logo className={"mb-10 mt-4 -ml-0.5"} />
+      <Logo className={"mb-10 mt-4 -ml-1 p-input-lg"} />
       <Menu />
       <div className={"grow"}></div>
       <SocialMedia className={"mb-6 ml-[16px]"} />
