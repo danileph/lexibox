@@ -19,7 +19,6 @@ export const AuthModal: FC<IAuthModalProps> = () => {
           Open Dialog
         </Button>
       )}
-      label={"Open a modal"}
       header={
         <>
           <Typography.Title className={"text-center mb-3 mt-4"} level={2}>
