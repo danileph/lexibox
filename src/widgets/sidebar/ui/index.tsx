@@ -5,6 +5,7 @@ import { Menu } from "./menu";
 import { SocialMedia } from "./social-media";
 import { AdditionMenu } from "@/widgets/sidebar/ui/addition-menu";
 import { Logo } from "@/shared/ui/logo";
+import { QuickSearch } from "@/features/quick-search";
 
 interface ISidebarProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -17,7 +18,8 @@ export const Sidebar: FC<ISidebarProps> = ({ className, ...other }) => {
       `}
       {...other}
     >
-      <Logo className={"mb-10 mt-4 -ml-1 p-input-lg"} />
+      <Logo className={"mt-4 -ml-1 p-input-lg mb-6"} />
+      <QuickSearch className={"mb-4 mx-2"} />
       <Menu />
       <div className={"grow"}></div>
       <SocialMedia className={"mb-6 ml-[16px]"} />
