@@ -6,8 +6,8 @@ type IPersonIconProps = React.HTMLAttributes<HTMLElement> & IconProps & {};
 export const PersonIcon: FC<IPersonIconProps> = ({ color = "black" }) => {
   return (
     <svg
-      width="21"
-      height="21"
+      width="18"
+      height="18"
       viewBox="0 0 19 21"
       fill={color}
       stroke={color}

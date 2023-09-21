@@ -5,8 +5,8 @@ interface ISearchIconProps extends React.HTMLAttributes<HTMLElement> {}
 export const SearchIcon: FC<ISearchIconProps> = ({ color = "black" }) => {
   return (
     <svg
-      width="21"
-      height="21"
+      width="18"
+      height="18"
       viewBox="0 0 26 26"
       stroke={color}
       fill="none"
