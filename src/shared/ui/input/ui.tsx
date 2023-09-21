@@ -2,6 +2,7 @@
 import { ChangeEvent, FC, useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { v4 as uuidv4 } from "uuid";
+import { className } from "postcss-selector-parser";
 interface IInputProps
   extends Omit<
     React.InputHTMLAttributes<HTMLInputElement>,
@@ -64,6 +65,7 @@ export const Input: FC<IInputProps> = ({
   size = "medium",
   onChange = () => {},
   fullWidth = false,
+  className,
   ...other
 }) => {
   const { className: wrapClassName, ...otherWrapProps } = wrapProps || {};
@@ -93,6 +95,7 @@ export const Input: FC<IInputProps> = ({
           styles.input.sizes[size],
           withLabel && placeholder && styles.input.withLabel[size],
           fullWidth && styles.input.fullWidth,
+          className,
         )}
         onChange={handleOnChange}
         value={value}
